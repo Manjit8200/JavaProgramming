@@ -1,6 +1,4 @@
 import java.util.Random;
-
-
 class Employee{
 
 int salary;
@@ -17,7 +15,7 @@ int WagePrHr=20;
 
        if(type==0){
 
-          System.out.println("FULL TIME EMPLOYEE");
+          System.out.println("EMPLOYEE IS FULL TIME");
 
           DayPrHr = 8;
 
@@ -27,7 +25,7 @@ int WagePrHr=20;
 
        else{
 
-          System.out.println("PART TIME EMPLOYEE");
+          System.out.println("EMPLOYEE IS PART TIME");
 
           DayPrHr = 4;
 
@@ -38,7 +36,7 @@ int WagePrHr=20;
       }
 
 
-     public int getMonthlyWage(int Hours, int day){
+  public int getMonthlyWage(int Hours, int day){
 
 	int status;
 
