@@ -33,7 +33,6 @@ class Employee{
 		}
 
 		else{
-
 			System.out.println("Employee absent");
 
 			DayPrHr=0;
@@ -59,11 +58,9 @@ class EmpWageComputation{
     System.out.println("Welcome to Employee Wage Computation Program");
 
 		Employee person = new Employee();
-
 		Random rand = new Random();
 
 		attend = rand.nextInt(3);
-
 		DailyWage = person.get_salary(attend);
 
 		System.out.println("The Daily wage is: "+DailyWage);
