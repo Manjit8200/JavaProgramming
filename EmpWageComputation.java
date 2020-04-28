@@ -1,70 +1,112 @@
 import java.util.Random;
-
 class Employee{
 
-	int salary;
+int salary;
 
-	int attendance;
+int attendance;
 
-	public int get_salary(int attendance)
+int WagePrHr=20;
 
-	{
 
-		int WagePrHr=20;
 
-		int DayPrHr;
+      public int getEmpType(int type){
 
-		this.attendance = attendance;
+       int DayPrHr;
 
-		if(this.attendance==0){
+       if(type==0){
 
-			System.out.println("Full time employee");
+          System.out.println("EMPLOYEE IS FULL TIME");
 
-			DayPrHr=8;
+          DayPrHr = 8;
 
-		}
+          return DayPrHr;
 
-		else if(this.attendance==1){
+       }
 
-			System.out.println("Part time employee");
+       else{
 
-			DayPrHr=4;
+          System.out.println("EMPLOYEE IS PART TIME");
 
-		}
+          DayPrHr = 4;
 
-		else{
-			System.out.println("Employee absent");
+          return DayPrHr;
 
-			DayPrHr=0;
+       }
 
-		}
+      }
 
-		salary=WagePrHr*DayPrHr;
 
-		return salary;
+  public int getMonthlyWage(int Hours, int day){
+
+	int status;
+
+	Random rand = new Random();
+
+	status = rand.nextInt(2);
+
+	if(status==0){
+
+	    System.out.println("Day "+day+": Present");								
+
+      	    salary=WagePrHr*Hours;
+
+      	    return salary;
 
 	}
 
+	else{
+
+	    System.out.println("Day "+day+": Absent");
+
+	    salary=0;																			
+
+	    return salary;
+
+	}
+
+      }
+
+      public int getDailyWage(int Hours){
+
+	int wage;
+
+	wage=WagePrHr*Hours;
+
+	return wage;
+
+      }
+
 }
+
 
 class EmpWageComputation{
 
-   public static void main(String []s){
+ public static void main(String []s){
 
-		int attend;
+	int empType;
+	int DailyWage;
+	int MonthWage=0;
+	int WorkHrs;
+	int get_wage;
 
-		int DailyWage;
+  System.out.println("Welcome to Employee Wage Computation Program");
 
-    System.out.println("Welcome to Employee Wage Computation Program");
+	Employee person = new Employee();
 
-		Employee person = new Employee();
-		Random rand = new Random();
+	Random rand = new Random();
 
-		attend = rand.nextInt(3);
-		DailyWage = person.get_salary(attend);
+	empType = rand.nextInt(2);
 
-		System.out.println("The Daily wage is: "+DailyWage);
+	WorkHrs = person.getEmpType(empType);
 
-   }
+	DailyWage = person.getDailyWage(WorkHrs);
+
+     for (int i=1;i<=20;i++){
+            MonthWage += person.getMonthlyWage(WorkHrs,i);
+	}
+
+        System.out.println("The monthy wage (20 days) is: "+MonthWage);
+
+      }
 
 }
