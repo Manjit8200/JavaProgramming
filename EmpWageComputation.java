@@ -8,17 +8,17 @@ int attendance;
 
 int WagePrHr=20;
 
-      public int getEmpType(int type){
+      public int getEmpcheck(int check){
 
-        int DayPrHr;
+        int DayPerHr;
 
-        if(type==0){
+        if(check==0){
 
            System.out.println("EMPLOYEE IS FULL TIME ");
 
-           DayPrHr = 8;
+           DayPerHr = 8;
 
-           return DayPrHr;
+           return DayPerHr;
 
          }
 
@@ -26,26 +26,26 @@ int WagePrHr=20;
 
             System.out.println("EMPLOYEE IS PART TIME ");
 
-            DayPrHr = 4;
+            DayPerHr = 4;
 
-            return DayPrHr;
+            return DayPerHr;
 
          }
 
       }
 
 
-      public int[] getMonthlyWage(int Hours, int day, int type){
+      public int[] getmonthwage(int Hours, int day, int check){
 
    	 int status;
 
-	 int hrs_worked=0;
+	 int HrWork=0;
 
 	 Random rand = new Random();
 
 	 status = rand.nextInt(2);
 
-	 int[] salary_and_hours = new int[2];
+	 int[] SalaryHr = new int[2];
 
 	 if(status==0){
 
@@ -53,19 +53,19 @@ int WagePrHr=20;
 
 	    salary+=WagePrHr*Hours;
 
-	    if(type==0)
+	    if(check==0)
 
-	       hrs_worked+=8;
+	       HrWork+=8;
 
-	    if(type==1)
+	    if(check==1)
 
-	       hrs_worked+=4;
+	       HrWork+=4;
 
-            salary_and_hours[0] = salary;
+            SalaryHr[0] = salary;
 
-	    salary_and_hours[1] = hrs_worked;
+	    SalaryHr[1] = HrWork;
 
-	    return salary_and_hours;
+	    return SalaryHr;
 
 	 }
 
@@ -75,13 +75,13 @@ int WagePrHr=20;
 
 	    salary+=0;
 
-            hrs_worked+=0;
+            HrWork+=0;
 
-	    salary_and_hours[0] = salary;
+	    SalaryHr[0] = salary;
 
-            salary_and_hours[1] = hrs_worked;
+            SalaryHr[1] = HrWork;
 
-            return salary_and_hours;
+            return SalaryHr;
 
 	 }
 
@@ -101,11 +101,11 @@ int WagePrHr=20;
 }
 
 
-class EmpWageComputation{
+class A5{
 
       public static void main(String []s){
 
-         int empType;
+         int empcheck;
 
 	 int DailyWage;
 
@@ -115,35 +115,35 @@ class EmpWageComputation{
 
 	 int loop_end=0;
 
-	 int [] salary_and_hours = new int[2];
+	 int [] SalaryHr = new int[2];
 
-   System.out.println("Welcome to Employee Wage Computation Program");
+         System.out.println("Welcome to Employee Wage Computation Program");
 
 	 Employee person = new Employee();
 
 	 Random rand = new Random();
 
-	 empType = rand.nextInt(2);
+	 empcheck = rand.nextInt(2);
 
-	 WorkHrs = person.getEmpType(empType);
+	 WorkHrs = person.getEmpcheck(empcheck);
 
 	
 
 	 DailyWage = person.getDailyWage(WorkHrs);
 
-	 System.out.println("The daily wage is: "+DailyWage);
+	 System.out.println("The Employee daily wage is: "+DailyWage);
 
 
          while (loop_end==0){
 
-            salary_and_hours = person.getMonthlyWage(WorkHrs,TotalDays,empType);
+            SalaryHr = person.getmonthwage(WorkHrs,TotalDays,empcheck);
 
 
-        if(TotalDays==20 || salary_and_hours[1]==100){
+        if(TotalDays==20 || SalaryHr[1]==100){
 
 		if(TotalDays==20){
 
-		   System.out.println("20 days over!");
+		   System.out.println("20 days completed");
 
 		   break;
 
@@ -163,7 +163,7 @@ class EmpWageComputation{
 
          }
 
-         System.out.println("The monthly wage is: "+ salary_and_hours[0]);
+         System.out.println("The monthl wise wage is: "+ SalaryHr[0]);
 
       }
 
