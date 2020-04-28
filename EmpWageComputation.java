@@ -19,15 +19,14 @@ class Employee{
 		if(this.attendance==0){
 
 			System.out.println("Employee Present");
-
 			DayPrHr=8;
+
 
 		}
 
 		else{
 
 			System.out.println("Employee Absent");
-
 			DayPrHr=0;
 
 		}
@@ -37,8 +36,6 @@ class Employee{
 		return salary;
 
 	}
-
-
 
 }
 
@@ -61,6 +58,7 @@ class EmpWageComputation{
 		DailyWage = person.get_salary(attend);
 
 		System.out.println("The Daily wage is: "+DailyWage);
+
 
    }
 
