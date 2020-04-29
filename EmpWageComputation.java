@@ -1,13 +1,22 @@
+/*
+
+*Employee Wage Computation Problem Solve
+
+*@author Manjit Khurana
+
+*/
 import java.util.Random;
 
-class Employee{
+ class Employee{
 
-int salary;
+	int salary;
+	int attendance;
+	int WagePrHr=20;
 
-int attendance;
-
-int WagePrHr=20;
-
+   /*
+  *Method Find Employee Wage per hours and check PartTime or FullTime
+  */
+	  
       public int getEmpcheck(int check){
 
         int DayPerHr;
@@ -15,9 +24,7 @@ int WagePrHr=20;
         if(check==0){
 
            System.out.println("EMPLOYEE IS FULL TIME ");
-
            DayPerHr = 8;
-
            return DayPerHr;
 
          }
@@ -34,7 +41,10 @@ int WagePrHr=20;
 
       }
 
-
+ /*
+ *Method use array to  stores Employee monthly wage & total working hours
+ */
+	 
       public int[] getmonthwage(int Hours, int day, int check){
 
    	 int status;
@@ -86,8 +96,9 @@ int WagePrHr=20;
 	 }
 
       }
-
-
+  /*
+      *Method use to daily wage of employee based on Full time/Part time/Absent
+  */
       public int getDailyWage(int Hours){
 
 	    int wage;
@@ -100,12 +111,16 @@ int WagePrHr=20;
 
 }
 
-
-class A5{
+/*
+*Employee Wage Computation class
+*Main method
+*/
+		
+class EmpWageComputation{
 
       public static void main(String []s){
 
-         int empcheck;
+     int empcheck;
 
 	 int DailyWage;
 
@@ -113,51 +128,42 @@ class A5{
 
 	 int TotalDays=1;
 
-	 int loop_end=0;
+	 int end=0;
 
 	 int [] SalaryHr = new int[2];
 
-         System.out.println("Welcome to Employee Wage Computation Program");
+     System.out.println("Welcome to Employee Wage Computation Program");
 
-	 Employee person = new Employee();
+	 Employee emp = new Employee();
 
 	 Random rand = new Random();
 
 	 empcheck = rand.nextInt(2);
 
-	 WorkHrs = person.getEmpcheck(empcheck);
+	 WorkHrs = emp.getEmpcheck(empcheck);
 
-	
-
-	 DailyWage = person.getDailyWage(WorkHrs);
+	 DailyWage = emp.getDailyWage(WorkHrs);
 
 	 System.out.println("The Employee daily wage is: "+DailyWage);
 
 
-         while (loop_end==0){
+// Find and Calculate monthly Employee Wage   
 
-            SalaryHr = person.getmonthwage(WorkHrs,TotalDays,empcheck);
+   while (end==0){
 
+    SalaryHr = emp.getmonthwage(WorkHrs,TotalDays,empcheck);
 
         if(TotalDays==20 || SalaryHr[1]==100){
 
 		if(TotalDays==20){
-
-		   System.out.println("20 days completed");
-
+			System.out.println("20 days Done");
 		   break;
-
 		}
-
 		else{
-
-		   System.out.println("100 working hours completed!");
-
+		   System.out.println("100 working hours Done!");
 		   break;
-
 		}
-
-	    }
+	  }
 
 	 TotalDays+=1;
 
