@@ -138,10 +138,10 @@ public EmpWageInstance(String company, int numOfDays, int empRate, int maxHrs){
 
    public static void main(String []s){
 
-		EmpWageInstance Dmart = new EmpWageInstance("Dmart",30,20,100);
+	final EmpWageInstance Dmart = new EmpWageInstance("Dmart",30,20,100);
 		Dmart.calculateEmpWageInstance();
 
-		EmpWageInstance Rer = new EmpWageInstance("Reliance",25,15,150);
+	final EmpWageInstance Rer = new EmpWageInstance("Reliance",25,15,150);
 		Rer.calculateEmpWageInstance();
 
 
