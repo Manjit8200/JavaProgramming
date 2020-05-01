@@ -1,13 +1,12 @@
+import java.util.Random;
 /*
 *Employee Wage Computation using Instance method
 *@author Manjit Khurana
 */
 
-import java.util.Random;
 //Employee Wage class using Instance method
 public class EmpWageInstance{
 
-//Constants
 	private static final int IS_PART_TIME = 0;
 	private static final int IS_FULL_TIME = 1;
 
