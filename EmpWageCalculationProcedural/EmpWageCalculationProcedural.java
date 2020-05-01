@@ -1,13 +1,10 @@
+import java.util.Random;
+
 /*
 *Employee Wage Computation using procedural method
 *@author Manjit Khurana
 */
-
-import java.util.Random;
-
 public class EmpWageCalculationProcedural{
-
-//Constants
 
 private static final int IS_PART_TIME = 0;
 
