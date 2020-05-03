@@ -1,6 +1,8 @@
 import java.util.Random;
-//Employee Wage Computation Problem Solve to Procedural
-//@author Manjit Khurana
+
+/*Employee Wage Computation Problem Solve to Procedural
+  @author Manjit Khurana
+*/
  class EmployeePro{
      private static final int IS_PART_TIME = 1;
      private static final int IS_FULL_TIME = 2;
@@ -46,4 +48,3 @@ import java.util.Random;
     }
 
  }
- 
